@@ -21,7 +21,6 @@ public class MyViewPager extends ViewPager {
 		return false;
 	}
 	
-	@Override
 	public boolean onInterceptTouchEvent(MotionEvent arg0) {
 		// TODO Auto-generated method stub
 		return false;
