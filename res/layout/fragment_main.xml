@@ -3,12 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-
+	
+    <TextView 
+        android:id="@+id/tv_items"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:textSize="12sp"
+        android:textColor="@color/danger"
+        android:gravity="center"
+        />
     <ListView
         android:id="@+id/lv_stockinfo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" >
+        android:layout_weight="1" 
+        android:divider="@null"
+        android:dividerHeight="4dp"
+        android:layout_marginTop="24dp"
+        >
     </ListView>
 
     <LinearLayout
@@ -27,7 +39,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.382"
-            android:background="@drawable/buttonshape"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
             android:text="添加"

@@ -19,7 +19,6 @@ public class HttpTools {
 		HttpUtils httpUtils= new HttpUtils(6*3000);
 		final ProgressDialog progressDialog= new ProgressDialog(context);
 		progressDialog.setTitle("正在请求数据");
-		params.addHeader("apikey","36e638ddd7bc55805a9d081953204472");
 		httpUtils.send(HttpMethod.GET,url,params,new RequestCallBack<String>() {
 			public void onFailure(HttpException arg0, String arg1) {
 				progressDialog.dismiss();
