@@ -3,6 +3,7 @@ package com.xiaohu.stockquery.adapter.base;
 
 import java.util.List;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

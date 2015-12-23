@@ -12,8 +12,8 @@ public class MorePager extends BasePager {
 	}
 	
 	public void initData() {
-		mTvTitle.setText("更多");
-		Log.i("PagerDataTest","更多数据初始化");
+		mTvTitle.setText("鏇村");
+		Log.i("PagerDataTest","锟斤拷锟斤拷锟捷筹拷始锟斤拷");
 	}
 
 }

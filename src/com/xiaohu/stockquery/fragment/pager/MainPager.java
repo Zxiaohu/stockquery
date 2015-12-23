@@ -13,7 +13,7 @@ public class MainPager extends BasePager {
 	}
 
 	public void initData() {
-		mTvTitle.setText("Ö÷Ò³");
+		mTvTitle.setText("ä¸»é¡µ");
 		if(mainPagerView==null){
 			mainPagerView= new MainPagerView(mActivity);
 			mainPagerView.initData();

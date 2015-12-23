@@ -1,31 +1,47 @@
 package com.xiaohu.stockquery.tools;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 
 public class HttpTools {
-	public static String RUL="http://hq.sinajs.cn/";
-	public static void sendHttp(String url,final Context context,final MyHttpListener mHttpListener){
+
+	
+	public static void sendHttp(String url,final Context context,final RequestParams params,final MyHttpListener mHttpListener){
 		HttpUtils httpUtils= new HttpUtils(6*3000);
-		httpUtils.send(HttpMethod.POST,url,new RequestCallBack<String>() {
+		final ProgressDialog progressDialog= new ProgressDialog(context);
+		progressDialog.setTitle("æ­£åœ¨è¯·æ±‚æ•°æ®");
+		params.addHeader("apikey","36e638ddd7bc55805a9d081953204472");
+		httpUtils.send(HttpMethod.GET,url,params,new RequestCallBack<String>() {
 			public void onFailure(HttpException arg0, String arg1) {
-				Toast.makeText(context, "ÇëÇóÊ§°Ü", 3000).show();
+				progressDialog.dismiss();
+				SystemTools.showToastInfo(context, "æ— æ³•è¿æ¥æœåŠ¡å™¨", 2);
 			}
 			public void onSuccess(ResponseInfo<String> arg0) {
+				progressDialog.dismiss();
 				String response=arg0.result.toString();
 				if(TextUtils.isEmpty(response)){
-					Toast.makeText(context, "ÇëÇóµÄÊı¾İÓĞÎó", 3000).show();
+					SystemTools.showToastInfo(context, "æŸ¥è¯¢åˆ°çš„æ•°æ®æœ‰è¯¯", 2);
 				}else{
 					mHttpListener.finish(response);
-					
 				}
+			}
+			@Override
+			public void onLoading(long total, long current, boolean isUploading) {
+				super.onLoading(total, current, isUploading);
+				progressDialog.show();
+			}
+			public void onStart() {
+				super.onStart();
+				progressDialog.show();
 			}
 		});
 	}

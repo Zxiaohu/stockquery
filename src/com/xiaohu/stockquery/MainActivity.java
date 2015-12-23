@@ -21,6 +21,11 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * 
+ * @author zxh
+ * 
+ */
 public class MainActivity extends FragmentActivity implements OnClickListener{
 
 	@ViewInject(R.id.vp_main)
@@ -40,25 +45,24 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ViewUtils.inject(this);
-		//³õÊ¼»¯×ÊÔ´ÐÅÏ¢
+		//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½Ï¢
 		initResources();       
-		//³õÊ¼»¯µã»÷ÊÂ¼þ
+		//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		initEvents(tv_mian,tv_more);
-		//³õÊ¼»¯Êý¾Ý
+		//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½
 		initData();
 		
-		//viewpagerÏà¹Ø²Ù×÷
 		setViewPager();
 		
 	}
 	
 	private void setViewPager() {
-		//ÉèÖÃÊÊÅäÆ÷
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		vp_main.setAdapter(MyPageAdapter);
-		//ÉèÖÃ¼àÌýÊÂ¼þ
+		//ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Â¼ï¿½
 		vp_main.setOnPageChangeListener(new OnPageChangeListener() {
 			public void onPageSelected(int arg0) {
-				mPagers.get(arg0).initData();//³õÊ¼»¯Êý¾Ý
+				mPagers.get(arg0).initData();//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½
 			}
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
 				
@@ -67,7 +71,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 				
 			}
 		});
-		mPagers.get(0).initData();//Ä¬ÈÏ³õÊ¼»¯Êý¾Ý
+		mPagers.get(0).initData();//Ä¬ï¿½Ï³ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	}
 
 	private void initData() {
@@ -128,7 +132,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		}
 	}
 	
-	//ÉèÖÃÑÕÉ«µÄÊÂ¼þ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É«ï¿½ï¿½ï¿½Â¼ï¿½
 	private void setColor(View []views,int []colors){
 		for (int i = 0; i < colors.length; i++) {
 			if(views[i] instanceof TextView){

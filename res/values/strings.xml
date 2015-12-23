@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="baidu_apikey">36e638ddd7bc55805a9d081953204472</string>
     <string name="app_name">stock</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-	<color name="blue">#418BCA</color>
-	<color name="green">#5BB85D</color>
-	<color name="red">#D9544F</color>
-	<color name="white">#FEFEFE</color>
-	<color name="normal">#000</color>
-	
+
+    <color name="blue">#418BCA</color>
+    <color name="green">#5BB85D</color>
+    <color name="red">#D9544F</color>
+    <color name="white">#FEFEFE</color>
+    <color name="normal">#000</color>
+    <color name="danger">#CC4444</color>
+    <color name="main_color">#33B5E5</color>
+
 </resources>

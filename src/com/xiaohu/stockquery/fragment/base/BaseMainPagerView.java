@@ -6,8 +6,7 @@ import android.view.View;
 public abstract class BaseMainPagerView {
 	
 	public Activity mActivity;
-
-	public View mRootView;// ¸ù²¼¾Ö¶ÔÏó
+	public View mRootView;//æ ¹view
 
 	public BaseMainPagerView(Activity activity) {
 		mActivity = activity;
@@ -15,12 +14,12 @@ public abstract class BaseMainPagerView {
 	}
 
 	/**
-	 * ³õÊ¼»¯½çÃæ
+	 *åˆå§‹åŒ–view
 	 */
 	public abstract View initViews();
 
 	/**
-	 * ³õÊ¼»¯Êı¾İ
+	 * åˆå§‹åŒ–æ•°æ®
 	 */
 	public void initData() {
 
