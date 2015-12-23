@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">stock</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<color name="blue">#418BCA</color>
+	<color name="green">#5BB85D</color>
+	<color name="red">#D9544F</color>
+	<color name="white">#FEFEFE</color>
+	<color name="normal">#000</color>
+	
+</resources>
