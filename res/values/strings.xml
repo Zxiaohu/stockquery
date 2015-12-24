@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	
+	<string name="qr_code">4902f3727d5d22c2515b02f7ee6f45fd</string>
 	<string name="juhe_apikey">7bce23d56c16a0484845db81b7394565</string>
     <string name="baidu_apikey">36e638ddd7bc55805a9d081953204472</string>
     <string name="app_name">stock</string>

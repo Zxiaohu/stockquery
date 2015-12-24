@@ -18,7 +18,6 @@ public class MainPager extends BasePager {
 			mainPagerView= new MainPagerView(mActivity);
 			mainPagerView.initData();
 			mFrameLayout.addView(mainPagerView.mRootView);
-			
 		}
 		
 	}

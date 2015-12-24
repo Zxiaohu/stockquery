@@ -17,6 +17,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -43,6 +44,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().requestFeature(Window.FEATURE_PROGRESS);
+		
 		setContentView(R.layout.activity_main);
 		ViewUtils.inject(this);
 		//��ʼ����Դ��Ϣ

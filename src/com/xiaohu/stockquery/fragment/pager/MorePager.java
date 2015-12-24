@@ -6,6 +6,7 @@ import android.util.Log;
 import com.xiaohu.stockquery.fragment.base.BasePager;
 
 public class MorePager extends BasePager {
+	private MorePagerView morePagerView;
 	public MorePager(Activity activity) {
 		super(activity);
 		// TODO Auto-generated constructor stub
@@ -13,7 +14,12 @@ public class MorePager extends BasePager {
 	
 	public void initData() {
 		mTvTitle.setText("更多");
-		Log.i("PagerDataTest","�����ݳ�ʼ��");
+		
+		if(morePagerView==null){
+			morePagerView= new MorePagerView(mActivity);
+			morePagerView.initData();
+			mFrameLayout.addView(morePagerView.mRootView);
+		}
 	}
 
 }

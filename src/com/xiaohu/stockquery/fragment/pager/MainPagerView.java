@@ -39,7 +39,7 @@ import com.xiaohu.stockquery.tools.SystemTools;
 public class MainPagerView extends BaseMainPagerView {
 
 	private ListView lv_stockinfo;//股票信息列表
-	private ArrayList<JuHeListData.StockInfo> mStockinfos;
+	private ArrayList<JuHeListData.StockInfo> mStockinfos;//聚合数据返回的数据
 	private Button btn_add;//
 	private EditText et_stock_input;
 	private JuHeListData juHeListData;
@@ -62,12 +62,14 @@ public class MainPagerView extends BaseMainPagerView {
 		btn_add.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 
+				//获取输入框的数据
 				String page=et_stock_input.getText().toString().trim();
 
+				//验证数据
 				if(page.equals("")){
 					SystemTools.showToastInfo(mActivity, "请填入完整信息", 2);
 				}else{
-
+					
 					//getDataForServer(stockID);
 					getDataForJuHeServer(Integer.parseInt(page),2);
 					//getDataByBaiDuApi();
@@ -86,8 +88,6 @@ public class MainPagerView extends BaseMainPagerView {
 
 		if(mStockinfos!=null){		
 			lv_stockinfo.setAdapter(new CommonAdapter<JuHeListData.StockInfo>(mActivity,mStockinfos,R.layout.main_pagerview_listadt) {
-
-				@Override
 				public void convert(ViewHolder helper, StockInfo item) {
 					helper.setText(R.id.tv_stock_name, item.name);
 					helper.setText(R.id.tv_stock_startp, item.open);
@@ -95,7 +95,6 @@ public class MainPagerView extends BaseMainPagerView {
 					helper.setText(R.id.tv_stock_maxp, item.high);
 					helper.setText(R.id.tv_stock_currentp, item.trade);
 					helper.setText(R.id.tv_stock_date, item.ticktime);
-
 				}
 			});
 		}
